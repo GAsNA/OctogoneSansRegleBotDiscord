@@ -156,7 +156,7 @@ public class Command3T implements CommandExecutor {
     @Override
     public void run(MessageCreateEvent event, Command command, String[] args) {
         if (args.length == 0 || args.length > 2)
-            send_message(event, "Write ``&t3 help`` for more informations.");
+            send_message(event, "Write ``" + PREFIX + "t3 help`` for more informations.");
         else if (args.length == 2) {
             if (!is_id(args[0]) || !is_id(args[1])) {
                 send_message(event, "You need to enter two ids.");
@@ -168,7 +168,7 @@ public class Command3T implements CommandExecutor {
             }
             long ac_p1 = get_id_players(args[0]), ac_p2 = get_id_players(args[1]);
             if ((ac_p1 == p1 || ac_p2 == p1) && (ac_p1 == p2 || ac_p2 == p2)) {
-                send_message(event, "Your game is already in progress.\nPlease choose an action (``&t3 help`` for more informations).");
+                send_message(event, "Your game is already in progress.\nPlease choose an action (``" + PREFIX + "t3 help`` for more informations).");
                 return;
             }
             if (p1 != 0 && p2 != 0) {
@@ -184,11 +184,11 @@ public class Command3T implements CommandExecutor {
             send_message(event, "Your game can begin !");
         } else if (Objects.equals(args[0], "help") || Objects.equals(args[0], "h")) {
             EmbedBuilder embed = Embed.get_embed_help("Help for tic-tac-toe", "Tic-tac-toe game, here is the commands.", "Have fun!");
-            embed.addInlineField("How to play", "Call the tic-tac-toe command and indicate your next move by writing the row number, then the column number. For example: ``&t3 13`` for the first row and the third column.")
-                 .addInlineField("Display the map", "To display the map of the current game, write a 'm' or 'map' behind the 3t command. For example: ``&t3 m`` or ``&t3 map``")
-                 .addInlineField("Know the next player", "To know who is the next player, write 'np'. For example: ``&t3 np``")
-                 .addInlineField("Begin the game", "If no game are engaged, indicate the two players by tagging them. For example: ``&t3 @p1 @p2``")
-                 .addInlineField("Stop the game", "To stop the current game, write a 'e' or 'end' behind the 3t command. For example: ``&3t e`` or ``&3t end``");
+            embed.addInlineField("How to play", "Call the tic-tac-toe command and indicate your next move by writing the row number, then the column number. For example: ``" + PREFIX + "t3 13`` for the first row and the third column.")
+                 .addInlineField("Display the map", "To display the map of the current game, write a 'm' or 'map' behind the 3t command. For example: ``" + PREFIX + "t3 m`` or ``" + PREFIX + "t3 map``")
+                 .addInlineField("Know the next player", "To know who is the next player, write 'np'. For example: ``" + PREFIX + "t3 np``")
+                 .addInlineField("Begin the game", "If no game are engaged, indicate the two players by tagging them. For example: ``" + PREFIX + "t3 @p1 @p2``")
+                 .addInlineField("Stop the game", "To stop the current game, write a 'e' or 'end' behind the 3t command. For example: ``" + PREFIX + "3t e`` or ``" + PREFIX + "3t end``");
             send_message(event, embed);
         } else if (Objects.equals(args[0], "end") || Objects.equals(args[0], "e")) {
             if (pre_check(event))
@@ -224,6 +224,6 @@ public class Command3T implements CommandExecutor {
             if (there_is_a_win(event) || all_emplacement_marked(event))
                 reinit(event);
         } else
-            send_message(event, "Unknown command. Please write ``&t3 help`` for more informations.");
+            send_message(event, "Unknown command. Please write ``" + PREFIX + "t3 help`` for more informations.");
     }
 }

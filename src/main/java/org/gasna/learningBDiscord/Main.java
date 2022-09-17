@@ -20,13 +20,6 @@ public class Main {
                 .login().join();
 
         api.addMessageCreateListener(MessageManager::create);
-        //Optional<User> u = api.getCachedUserByDiscriminatedName("Gabrielle");
-        //CompletableFuture<User> u = api.getUserById(474355372799557643L);
-        //System.out.println(u.get());
-        /*if (u.isPresent()) {
-            System.out.printf("OK");
-            System.out.printf(u.get().getDiscriminatedName());
-        }*/
     }
 
     public static ConfigManager getConfigManager() {

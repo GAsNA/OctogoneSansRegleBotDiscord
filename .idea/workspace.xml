@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c7ed13f-b037-4a71-a92d-235328efee1c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/gasna/learningBDiscord/commands/CommandOctogone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gasna/learningBDiscord/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gasna/learningBDiscord/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gasna/learningBDiscord/commands/Command3T.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gasna/learningBDiscord/commands/Command3T.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gasna/learningBDiscord/commands/CommandHelp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gasna/learningBDiscord/commands/CommandHelp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gasna/learningBDiscord/utils/commands/CommandExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gasna/learningBDiscord/utils/commands/CommandExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/gasna/learningBDiscord/utils/commands/MessageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/gasna/learningBDiscord/utils/commands/MessageManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,13 +55,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/mnt/nfs/homes/rleseur/Documents/OctogoneSansRegleBotDiscord&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/gasna/Documents/JavaBotTest"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.gasna.learningBDiscord.Main" />
@@ -64,19 +72,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="OctogoneSansRegle" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="OctogoneSansRegle" />
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
