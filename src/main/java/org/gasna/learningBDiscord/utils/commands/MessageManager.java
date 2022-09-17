@@ -1,0 +1,68 @@
+package org.gasna.learningBDiscord.utils.commands;
+
+import org.gasna.learningBDiscord.Main;
+import org.gasna.learningBDiscord.commands.Command3T;
+import org.gasna.learningBDiscord.commands.CommandHelp;
+import org.gasna.learningBDiscord.commands.CommandOctogone;
+import org.gasna.learningBDiscord.commands.CommandPing;
+import org.javacord.api.event.message.MessageCreateEvent;
+
+import java.util.Arrays;
+
+public class MessageManager {
+
+    private static final CommandRegistry registry = new CommandRegistry();
+
+    private static final long idChannelTrain = 983086952272248915L;
+    private static final long idChannelBotTaverne = 963151959223849021L;
+
+    static {
+        registry.addCommand(new Command(
+                "ping",
+                "Pings the bot",
+                new CommandPing(),
+                "ping", "p?"
+        ));
+        registry.addCommand(new Command(
+                "tic-tac-toe",
+                "Play tic-tac-toe with friend",
+                new Command3T(),
+                "3t", "tic-tac-toe", "t3", "ttt"
+        ));
+        registry.addCommand(new Command(
+                "help",
+                "Help for Learning bot",
+                new CommandHelp(),
+                "help", "h"
+        ));
+        registry.addCommand(new Command(
+                "octogone sans regle",
+                "Octogone sans regle tmtc",
+                new CommandOctogone(),
+                "octogone", "octo", "8"
+        ));
+    }
+
+    private static final String PREFIX = Main.getConfigManager().getToml().getString("bot.prefix");
+
+    public static void create(MessageCreateEvent event) {
+        if (event.getChannel().getId() == idChannelBotTaverne || event.getChannel().getId() == idChannelTrain) {
+            if (event.getMessageContent().startsWith(PREFIX)) {
+                String[] args = event.getMessageContent().split(" ");
+                String commandName = args[0].substring(PREFIX.length());
+                args = args.length == 1 ? new String[0] : Arrays.copyOfRange(args, 1, args.length);
+
+                String[] finalArgs = args;
+                registry.getByAlias(commandName).ifPresent((cmd) -> {
+                    cmd.getExecutor().run(event, cmd, finalArgs);
+                });
+            }
+        }
+        /*if (Objects.equals(event.getMessageAuthor().getDiscriminatedName(), "Learning#4864")) {
+            event.addReactionsToMessage(EmojiParser.parseToUnicode(":white_check_mark:")).join();
+        } else if (Objects.equals(event.getMessageAuthor().getDiscriminatedName(), //"")) {
+            event.addReactionsToMessage(EmojiParser.parseToUnicode("Flex:789904635443544075")).join();
+        }*/
+    }
+
+}
