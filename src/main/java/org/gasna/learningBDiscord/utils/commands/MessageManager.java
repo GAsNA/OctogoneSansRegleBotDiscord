@@ -5,9 +5,11 @@ import org.gasna.learningBDiscord.commands.Command3T;
 import org.gasna.learningBDiscord.commands.CommandHelp;
 import org.gasna.learningBDiscord.commands.CommandOctogone;
 import org.gasna.learningBDiscord.commands.CommandPing;
+import org.javacord.api.entity.message.MessageAttachment;
 import org.javacord.api.event.message.MessageCreateEvent;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class MessageManager {
 
@@ -20,12 +22,12 @@ public class MessageManager {
                 new CommandPing(),
                 "ping", "p?"
         ));
-        registry.addCommand(new Command(
+        /*registry.addCommand(new Command(
                 "tic-tac-toe",
                 "Play tic-tac-toe with friend",
                 new Command3T(),
                 "3t", "tic-tac-toe", "t3", "ttt"
-        ));
+        ));*/
         registry.addCommand(new Command(
                 "help",
                 "Help for Learning bot",
@@ -41,6 +43,8 @@ public class MessageManager {
     }
 
     private static final String PREFIX = Main.getConfigManager().getToml().getString("bot.prefix");
+
+    public static boolean octogoneActive = false;
 
     public static void create(MessageCreateEvent event) {
         if (event.getMessageContent().startsWith(PREFIX)) {
