@@ -61,6 +61,7 @@ public class CommandOctogone implements CommandExecutor {
         channel = null;
         mes1 = null;
         mes2 = null;
+        MessageManager.octogoneActive = false;
         send_message(event, "Your game is ending...");
     }
 
@@ -127,6 +128,7 @@ public class CommandOctogone implements CommandExecutor {
             }
             if (p1 != 0 && p2 != 0) {
                 send_message(event, "There is already a game in progress with <@" + p1 + "> and <@" + p2 + ">.");
+                return;
             }
             long ac_p1 = event.getMessage().getAuthor().getId();
             long ac_p2 = get_id_players(args[0]);

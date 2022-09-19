@@ -23,8 +23,8 @@ public class MyThread implements Runnable {
             Thread.sleep(300000); // 5 minutes
             //Thread.sleep(5000); // 5 seconds
             //Thread.sleep(30000); // 30 seconds
-            MessageManager.octogoneActive = false;
-            CommandOctogone.finished();
+            if (MessageManager.octogoneActive)
+                CommandOctogone.finished();
         } catch (InterruptedException e) {
             System.out.println("Thread " +  threadName + " interrupted.");
         }
